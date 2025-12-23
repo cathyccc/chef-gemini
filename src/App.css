@@ -36,6 +36,8 @@ header {
 
 .main {
   padding: 30px;
+  display: flex;
+  flex-direction: column;
 }
 
 .add-ingredient-form {
@@ -53,7 +55,6 @@ header {
   border: 1px solid #D1D5DB;
   padding: 9px 13px;
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
-
 }
 
 .add-ingredient-form>button {
@@ -70,4 +71,10 @@ header {
 .add-ingredient-form>button::before {
   content: "+";
   margin-right: 5px;
+}
+
+.ingredient-list {
+  flex-grow: 1;
+  min-width: 150px;
+  max-width: 400px;
 }
