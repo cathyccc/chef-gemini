@@ -1,12 +1,8 @@
 import {useState} from 'react';
+import IngredientsList from './IngredientsList';
 
 export default function Main() {
   const [ingredients, setIngredients] = useState(["Chicken", "Oregano", "Tomatoes"])
-  
-  const listIngredients =
-    ingredients.map(ingredient => (
-      <li key={ingredient}>{ingredient}</li>
-    ))
 
   function handleSubmit(formData) {
     const newIngredient = formData.get("ingredient").trim()
@@ -26,12 +22,7 @@ export default function Main() {
         <button>Add Ingredient</button>
       </form>
 
-      {ingredients.length > 0 && <section>
-        <h2>Ingredients on hand:</h2>
-        <ul className="ingredients-list" aria-live="polite">
-          {listIngredients}
-        </ul>
-      </section>}
+      {ingredients.length > 0 && <IngredientsList ingredients={ingredients}/>}
     </main>
   )
 }
