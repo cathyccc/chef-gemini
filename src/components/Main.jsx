@@ -1,13 +1,19 @@
 import {useState} from 'react';
 import IngredientsList from './IngredientsList';
+import GeminiRecipe from './GeminiRecipe';
 
 export default function Main() {
   const [ingredients, setIngredients] = useState(["Chicken", "Oregano", "Tomatoes"])
+  const [recipeShown, setRecipeShown] = useState(false)
 
   function handleSubmit(formData) {
     const newIngredient = formData.get("ingredient").trim()
     if (!newIngredient) return
     setIngredients(prevIngredients => [...prevIngredients, newIngredient])
+  }
+
+  function toggleRecipeShown() {
+    setRecipeShown(prevShown => !prevShown)
   }
 
   return (
@@ -22,7 +28,9 @@ export default function Main() {
         <button>Add Ingredient</button>
       </form>
 
-      {ingredients.length > 0 && <IngredientsList ingredients={ingredients}/>}
+      {ingredients.length > 0 && <IngredientsList ingredients={ingredients} toggleRecipeShown={toggleRecipeShown}/>}
+
+      {recipeShown && <GeminiRecipe/>}
     </main>
   )
 }
