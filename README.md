@@ -3,7 +3,6 @@
 An AI-powered kitchen assistant that turns your random ingredients into delicious meals. This application uses a **React** frontend and an **Express** backend to securely communicate with the **Google Gemini 3 Flash** model.
 
 
-
 ## 📂 Project Structure
 ```text
 chef-gemini/
@@ -51,7 +50,7 @@ cd chef-gemini
 ```
 ### 2. Configure Environment Variables
 Create a `.env` file in the **root** folder:
-```code
+```env
 PORT=5000
 GEMINI_API_KEY=your_actual_key_here
 ```
@@ -67,7 +66,7 @@ cd ../front-end && npm install
 ```
 
 ### 4. Run the Full Stack
-This project is configured to launch both the frontend and backend from the front-end directory:
+This project is configured to launch both the frontend and backend from the `front-end` directory:
 
 ```bash
 cd front-end
@@ -75,5 +74,5 @@ npm run dev:all
 ```
 ---
 
-### 📄 License
-This project is open-source and available under the *MIT License*.
+## 📄 License
+This project is open-source and available under the **MIT License**.
