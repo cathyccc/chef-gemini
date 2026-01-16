@@ -3,7 +3,7 @@ import IngredientsList from './IngredientsList';
 import GeminiRecipe from './GeminiRecipe';
 
 export default function Main() {
-  const [ingredients, setIngredients] = useState(["Chicken", "Oregano", "Tomatoes"]);
+  const [ingredients, setIngredients] = useState([]);
   const [recipe, setRecipe] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
