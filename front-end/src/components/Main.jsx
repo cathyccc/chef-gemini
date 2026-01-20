@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState, useRef, useEffect} from 'react';
 import IngredientsList from './IngredientsList';
 import GeminiRecipe from './GeminiRecipe';
 
@@ -7,6 +7,13 @@ export default function Main() {
   const [recipe, setRecipe] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const recipeSection = useRef(null)
+
+  useEffect(() => {
+    if (recipe && recipeSection.current) {
+      recipeSection.current.scrollIntoView({behaviour: 'smooth'})
+    }
+  }, [recipe])
 
   function handleSubmit(formData) {
     const newIngredient = formData.get("ingredient").trim();
@@ -50,7 +57,8 @@ export default function Main() {
         <button>Add Ingredient</button>
       </form>
 
-      {ingredients.length > 0 && <IngredientsList ingredients={ingredients} generateRecipe={generateRecipe}/>}
+      {ingredients.length > 0 && <IngredientsList ref={recipeSection}
+ingredients={ingredients} generateRecipe={generateRecipe}/>}
 
       {loading && <h2> Loading... </h2>}
       {!loading && !error && recipe && <GeminiRecipe recipe={recipe}/>}
