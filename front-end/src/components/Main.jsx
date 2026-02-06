@@ -35,7 +35,6 @@ export default function Main() {
         body: JSON.stringify({ingredients: ingredients})
       });
       const recipe = await response.json();
-      console.log(recipe)
       setRecipe(recipe)
     } catch (err) {
       setError ('Something went wrong. Please try again.')

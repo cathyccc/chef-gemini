@@ -5,7 +5,7 @@ export default function Header() {
     <header>
       <nav className="navbar">
         <img className="nav-logo-icon" src={chefClaudeLogo} alt="chef-claude-logo"/>
-        <span className="nav-logo-text">Chef Claude</span>
+        <span className="nav-logo-text">Chef Gemini</span>
       </nav>
     </header>
   )
