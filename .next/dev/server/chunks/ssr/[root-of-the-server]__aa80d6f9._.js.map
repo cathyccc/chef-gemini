@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 14, "column": 0}, "map": {"version":3,"sources":["file:///Users/cathychan/Desktop/react-portfolio/chef-gemini/app/page.jsx"],"sourcesContent":["import Header from '@/components/Header'\nimport Main from '@/components/Main'\n\nexport default function Page() {\n  return (\n    <>\n      <Header/>\n      <Main/>\n    </>\n  )\n}\n\n"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;AAGe,SAAS;IACtB,qBACE;;0BACE,8OAAC;;;;;0BACD,8OAAC;;;;;;;AAGP"}}]
+}
