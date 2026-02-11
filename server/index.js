@@ -61,6 +61,12 @@ app.post('/api/generate-recipe', async (req, res) => {
 
 // Start the server
 const PORT = process.env.PORT || 3000;
+const ENV = process.env.NODE_ENV || 'development';
+
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  if (ENV === 'development') {
+    console.log(`Server running on http://localhost:${PORT}`);
+  } else {
+    console.log(`Server live on port ${PORT} in ${ENV} mode`);
+  }
 });
